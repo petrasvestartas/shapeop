@@ -32,3 +32,15 @@ Makefile
 # Ignore user-specific files
 *.user
 *.sublime-workspace
+
+# Ignore external dependencies
+external/
+*/external
+
+# Ignore shapeop
+shapeop/
+*/shapeop
+
+# Ignore build directory
+*/build
+*/build/
