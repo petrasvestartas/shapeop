@@ -1,4 +1,7 @@
-#include "pch.h"
+#include "pch.h" 
+#include "Solver.h"
+#include "Constraint.h"
+#include <iostream>
 
 void print_points(const ShapeOp::Matrix34 &p)
 {
@@ -16,7 +19,7 @@ int main() {
   // The << operator reads elements row by row
   p << 0.0, 0.5, 0.5, 0.0,
        0.0, 0.0, 1.0, 1.0,
-       0.0, 1.0, 0.0, 2.0;
+       0.0, 1.0, 0.0, 1.0;
 
   std::cout <<  "Input points:" << std::endl;
   print_points(p);

@@ -1,17 +1,18 @@
 # ReadMe
 
+## install ninja
 
-## Build
+sudo apt-get install -y ninja-build
+
+
+## ReBuild
 
 ```bash
-mkdir build
-cd build
-cmake ..
-make
-./ShapeOpExample
+rm -rf build && mkdir build && cd build && cmake -G Ninja .. && time ninja
 ```
 
+## Incremental build with small changes
 
-mkdir -p build && cd build
-cmake ..
-make
+```bash
+cd build && cmake -G Ninja .. && time ninja && ./cpp_example
+```
