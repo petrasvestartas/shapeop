@@ -8,10 +8,10 @@
 
 int main() {
     // Grid size - smaller grid for faster execution
-    const int rows = 10;
-    const int cols = 10;
+    const int rows = 14;
+    const int cols = 14;
     const double spacing = 1.0;
-    const double gravity_force = -0.001;
+    const double gravity_force = 0.001;
 
     // Helper to get index from grid coordinates
     auto index = [cols](int x, int y) { return y * cols + x; };
@@ -55,6 +55,12 @@ int main() {
     {
         std::vector<int> bottom_right = {index(cols - 1, rows - 1)};
         auto constraint = std::make_shared<ShapeOp::ClosenessConstraint>(bottom_right, 1e5, solver.getPoints());
+        solver.addConstraint(constraint);
+    }
+
+    {
+        std::vector<int> center = {index(cols / 2, rows / 2)};
+        auto constraint = std::make_shared<ShapeOp::ClosenessConstraint>(center, 1e5, solver.getPoints());
         solver.addConstraint(constraint);
     }
 
