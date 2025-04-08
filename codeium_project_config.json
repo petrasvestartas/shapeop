@@ -1,0 +1,14 @@
+{
+  "includes": [
+    "/home/petrasv/brg/code/shapeop",
+    "/home/petrasv/brg/code/shapeop/external/eigen",
+    "/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp",
+    "/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp/src",
+    "/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp/api"
+  ],
+  "language_server": "cpp",
+  "source_directories": [
+    "/home/petrasv/brg/code/shapeop",
+    "/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp/src"
+  ]
+}

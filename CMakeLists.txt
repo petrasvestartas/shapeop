@@ -152,7 +152,10 @@ target_include_directories(shapeop PRIVATE
 target_compile_options(shapeop PRIVATE -O3)
 
 # Set target sources for our example
-set(EXAMPLE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/unary_force.cpp)
+set(EXAMPLE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/cable_net.cpp)
+
+# Enable compile_commands.json generation for IDE integration
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Add the main executable
 add_executable(example ${EXAMPLE_SOURCE})

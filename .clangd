@@ -1,0 +1,25 @@
+CompileFlags:
+  Add: 
+    - "-I/home/petrasv/brg/code/shapeop"
+    - "-I/home/petrasv/brg/code/shapeop/external/eigen"
+    - "-I/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp"
+    - "-I/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp/src"
+    - "-I/home/petrasv/brg/code/shapeop/external/shapeop/libShapeOp/api"
+  
+Index:
+  Background: Build
+  StandardLibrary: Yes
+
+Diagnostics:
+  UnusedIncludes: Strict
+  
+InlayHints:
+  Enabled: Yes
+  ParameterNames: Yes
+  DeducedTypes: Yes
+
+Hover:
+  ShowAKA: Yes
+
+Completion:
+  AllScopes: Yes

@@ -28,3 +28,4 @@ Few repositories to reverse engineer the code from wrappers:
 - https://github.com/AndersDeleuran/ShapeOpGHPython
 - https://github.com/BlockResearchGroup/compas_meshpattern
 - https://github.com/MeshGeometry/IogramSource/tree/master/ThirdParty/ShapeOp
+- https://shapeop.org/ShapeOpDoc.0.1.0/class_shape_op_1_1_edge_strain_constraint.html
