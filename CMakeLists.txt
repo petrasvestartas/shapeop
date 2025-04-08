@@ -151,24 +151,48 @@ target_include_directories(shapeop PRIVATE
 # Compile with optimization for the library
 target_compile_options(shapeop PRIVATE -O3)
 
-# Set target sources for our example
-set(EXAMPLE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/cable_net.cpp)
+# Set the default example to build
+set(EXAMPLE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/wind_cloth.cpp)
 
 # Enable compile_commands.json generation for IDE integration
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Add the main executable
+# Add the main example executable
 add_executable(example ${EXAMPLE_SOURCE})
+target_link_libraries(example
+  shapeop
+)
 add_dependencies(example external_downloads)
 
-# Find required packages
-find_package(Threads REQUIRED)
+# Add additional example executables
+add_executable(wind_cloth_bin wind_cloth.cpp)
+add_executable(cable_net_bin cable_net.cpp)
 
-# Link against ShapeOp library
-target_link_libraries(example PRIVATE shapeop Threads::Threads)
+target_link_libraries(wind_cloth_bin shapeop)
+target_link_libraries(cable_net_bin shapeop)
+
+add_dependencies(wind_cloth_bin external_downloads)
+add_dependencies(cable_net_bin external_downloads)
 
 # The main executable needs to include all the ShapeOp headers
 target_include_directories(example PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${EIGEN_INCLUDE_DIR}
+  ${SHAPEOP_INCLUDE_DIR}
+  ${SHAPEOP_SRC_DIR}
+  ${SHAPEOP_API_DIR}
+)
+
+# The additional examples need the same include directories
+target_include_directories(wind_cloth_bin PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${EIGEN_INCLUDE_DIR}
+  ${SHAPEOP_INCLUDE_DIR}
+  ${SHAPEOP_SRC_DIR}
+  ${SHAPEOP_API_DIR}
+)
+
+target_include_directories(cable_net_bin PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${EIGEN_INCLUDE_DIR}
   ${SHAPEOP_INCLUDE_DIR}

@@ -101,7 +101,7 @@ int main() {
     
     // Write mesh to OBJ file
     ShapeOp::Matrix3X finalPoints = solver.getPoints();
-    std::ofstream meshFile("cloth_mesh.obj");
+    std::ofstream meshFile("unary_force.obj");
     if (meshFile.is_open()) {
         // Write vertices
         for (int i = 0; i < finalPoints.cols(); i++) {
@@ -123,7 +123,7 @@ int main() {
         }
         
         meshFile.close();
-        std::cout << "Mesh written to cloth_mesh.obj" << std::endl;
+        std::cout << "Mesh written to unary_force.obj" << std::endl;
     }
 
     return 0;
