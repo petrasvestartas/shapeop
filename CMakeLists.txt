@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(cpp_example)
+project(example)
 
 # Force CMake to use a specific build type
 if(NOT CMAKE_BUILD_TYPE)
@@ -152,20 +152,20 @@ target_include_directories(shapeop PRIVATE
 target_compile_options(shapeop PRIVATE -O3)
 
 # Set target sources for our example
-set(EXAMPLE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/cpp_example.cpp)
+set(EXAMPLE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/unary_force.cpp)
 
 # Add the main executable
-add_executable(cpp_example ${EXAMPLE_SOURCE})
-add_dependencies(cpp_example external_downloads)
+add_executable(example ${EXAMPLE_SOURCE})
+add_dependencies(example external_downloads)
 
 # Find required packages
 find_package(Threads REQUIRED)
 
 # Link against ShapeOp library
-target_link_libraries(cpp_example PRIVATE shapeop Threads::Threads)
+target_link_libraries(example PRIVATE shapeop Threads::Threads)
 
 # The main executable needs to include all the ShapeOp headers
-target_include_directories(cpp_example PRIVATE
+target_include_directories(example PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${EIGEN_INCLUDE_DIR}
   ${SHAPEOP_INCLUDE_DIR}
@@ -174,7 +174,7 @@ target_include_directories(cpp_example PRIVATE
 )
 
 # Set up precompiled headers
-target_precompile_headers(cpp_example PRIVATE pch.h)
+target_precompile_headers(example PRIVATE pch.h)
 
 # Build configuration info
 message(STATUS "============= Build Configuration =============")
