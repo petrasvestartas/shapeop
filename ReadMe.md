@@ -38,5 +38,5 @@ Cable Net
 ![image](https://github.com/user-attachments/assets/5d171b1d-4ff0-4450-98cf-3047fef1c1bc)
 
 Normal Force
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/b8ab6bbd-18fb-4590-bdda-558787f391a9)
 
