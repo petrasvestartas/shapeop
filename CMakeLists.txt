@@ -139,6 +139,7 @@ add_library(shapeop STATIC
     ${SHAPEOP_SRC_DIR}/Force.cpp
     ${SHAPEOP_SRC_DIR}/LSSolver.cpp
     ${SHAPEOP_SRC_DIR}/Solver.cpp
+    src/NormalForce.cpp
 )
 
 target_include_directories(shapeop PRIVATE
@@ -167,12 +168,15 @@ add_dependencies(example external_downloads)
 # Add additional example executables
 add_executable(wind_cloth_bin wind_cloth.cpp)
 add_executable(cable_net_bin cable_net.cpp)
+add_executable(balloon_bin balloon.cpp)
 
 target_link_libraries(wind_cloth_bin shapeop)
 target_link_libraries(cable_net_bin shapeop)
+target_link_libraries(balloon_bin shapeop)
 
 add_dependencies(wind_cloth_bin external_downloads)
 add_dependencies(cable_net_bin external_downloads)
+add_dependencies(balloon_bin external_downloads)
 
 # The main executable needs to include all the ShapeOp headers
 target_include_directories(example PRIVATE
@@ -194,6 +198,15 @@ target_include_directories(wind_cloth_bin PRIVATE
 
 target_include_directories(cable_net_bin PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
+  ${EIGEN_INCLUDE_DIR}
+  ${SHAPEOP_INCLUDE_DIR}
+  ${SHAPEOP_SRC_DIR}
+  ${SHAPEOP_API_DIR}
+)
+
+target_include_directories(balloon_bin PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/src
   ${EIGEN_INCLUDE_DIR}
   ${SHAPEOP_INCLUDE_DIR}
   ${SHAPEOP_SRC_DIR}

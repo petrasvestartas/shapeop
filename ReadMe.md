@@ -29,3 +29,10 @@ Few repositories to reverse engineer the code from wrappers:
 - https://github.com/BlockResearchGroup/compas_meshpattern
 - https://github.com/MeshGeometry/IogramSource/tree/master/ThirdParty/ShapeOp
 - https://shapeop.org/ShapeOpDoc.0.1.0/class_shape_op_1_1_edge_strain_constraint.html
+
+## Currently implemented examples
+Unary force
+![image](https://github.com/user-attachments/assets/ce5a9fc8-f736-4f4a-9b2e-fabfe35f2bbc)
+
+Cable Net
+![image](https://github.com/user-attachments/assets/5d171b1d-4ff0-4450-98cf-3047fef1c1bc)
