@@ -40,3 +40,6 @@ Cable Net
 Normal Force
 ![image](https://github.com/user-attachments/assets/b8ab6bbd-18fb-4590-bdda-558787f391a9)
 
+
+Normal Force from Mesh
+![image](https://github.com/user-attachments/assets/7fd23085-e84b-41f2-ad6d-df6cd1f11394)
